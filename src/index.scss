@@ -1,0 +1,17 @@
+@import 'foundation';
+
+html{
+    height: 100%;
+    //border: dotted 10px green;
+}
+
+body{
+    //border: dashed 10px red;
+    color: $dark-blue;
+    background: $off-white;
+    font-family: 'Karla', sans-serif;
+    font-size: 16px;
+    width: 100%;
+    //font-family: 'Martel Sans', sans-serif;
+}
+
