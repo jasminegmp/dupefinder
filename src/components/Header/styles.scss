@@ -1,0 +1,44 @@
+@import '../../foundation';
+
+.header-container{
+    //border: 1px solid pink;
+    margin: 20px;
+}
+
+.header{
+   // border: 1px solid green;
+}
+
+.dupe{
+    font-family: 'Karla', sans-serif;
+    font-size: 2rem;
+}
+
+.finder{
+    font-family: 'Leckerli One', cursive;
+    font-size: 2rem;
+}
+
+.sub-header{
+    //border: 1px solid red;
+    font-family: 'Martel Sans', sans-serif;
+    font-size: 1rem;
+    color: $light-gray;
+}
+
+
+.highlight-link{
+    font-size: 2rem;
+    padding: .3rem;
+    text-decoration: none;
+    color: $dark-blue;
+    box-shadow: inset 0px -.5rem $light-blue;
+    -webkit-transition: all .2s ease-in;
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+    &:hover{
+      box-shadow: inset 0px -5rem $light-blue;
+      
+    }
+  }

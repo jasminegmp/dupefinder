@@ -1,6 +1,8 @@
 import React from 'react';
 import './styles.scss';
 import Loader from '../Loader';
+import Landing from '../Landing';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 class App extends React.Component{
   constructor(props) {
@@ -13,14 +15,19 @@ class App extends React.Component{
 
   componentDidMount() {
     setTimeout(() =>{ //Start the timer
-      this.setState({loading: false}) //After 1 second, set render to true
-    }, 3000);
+      this.setState({loading: false}) //After 2 seconds, set render to true
+    }, 2000);
   }
 
   render() {
-      if (this.state.loading) return <Loader/>;
+    // bring this back later! %%%%%%%%%%%%%%%
+     // if (this.state.loading) return <Loader/>;
       return (
-        <div>HELLO!</div>
+        <Router>
+          <Switch>
+              <Route exact path='/' component={Landing}/>
+          </Switch>
+        </Router>
       )
   }
 }
