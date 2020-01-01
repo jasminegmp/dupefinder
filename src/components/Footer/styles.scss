@@ -1,0 +1,22 @@
+@import '../../foundation';
+
+.footer-container{
+    
+    //border: 1px solid pink;
+    margin: 20px;
+}
+
+.footer-link{
+    font-size: 1rem;
+    padding: .3rem;
+    text-decoration: none;
+    color: $dark-blue;
+    -webkit-transition: all .2s ease-in;
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+    &:hover{
+        color: $pink;
+      
+    }
+  }

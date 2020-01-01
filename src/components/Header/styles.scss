@@ -3,6 +3,7 @@
 .header-container{
     //border: 1px solid pink;
     margin: 20px;
+    flex: 1 0 auto;
 }
 
 .header{
@@ -38,7 +39,7 @@
     -o-transition: all .2s ease-in;
     transition: all .2s ease-in;
     &:hover{
-      box-shadow: inset 0px -5rem $light-blue;
+        box-shadow: inset 0px -5rem $light-blue;
       
     }
   }
