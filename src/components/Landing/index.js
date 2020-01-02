@@ -4,6 +4,7 @@ import "./styles.scss";
 import Header from '../Header';
 import ColorPicker from '../ColorPicker';
 import MakeupPicker from '../MakeupPicker';
+import Button from '../Button';
 import Footer from '../Footer';
 
 const Landing = () => {
@@ -14,6 +15,7 @@ const Landing = () => {
             <div class = "box"><ColorPicker/></div>
             <h1>Select Category</h1>
             <div class = "box"><MakeupPicker/></div>
+            <div class = "box center"><Button url = "blank" name = "Search"/></div>
             <div class = "box"><Footer/></div>
         </div>
     )

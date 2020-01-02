@@ -1,0 +1,24 @@
+@import '../../foundation';
+
+button{
+    width: 8em;
+    text-align:center;
+    font-size: 1em;
+    padding: .25em;
+    background: $light-blue;
+    border: none;
+    border-radius: 10px;
+
+}
+
+button a{
+    color: $dark-blue;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+button:hover{
+    cursor: pointer;
+    background: $white;
+    transition-duration: .4s;
+}

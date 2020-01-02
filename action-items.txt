@@ -1,16 +1,15 @@
 Open
 - Create React skeleton for four pages
-    - Home page
     - Results page
     - About page
     - Contact Page
 - Familiarize with Makeup API data JSON
-- Select color
-- Select Cateogry
 - Query selected makeup category
 - Request makeup category to Makeup API
 - On makeup category data return, sift through seeking most similar color
 - Arrange data to display onto results page
 
 Closed
-12/31 - Create mockup on Gravit designer
+12/31 - Create mockup on Gravit designer and Home Page
+1/1 - Select color
+1/2 - Select Cateogry
