@@ -1,5 +1,10 @@
-.landing{
-    //width: 100%;
-    //border: solid 3px purple;
-  }
+.container{
+  display: flex;
+  flex-direction: column;
+}
+
+.box{
+ // border: 1px solid pink;
+  margin: 20px;
+}
   

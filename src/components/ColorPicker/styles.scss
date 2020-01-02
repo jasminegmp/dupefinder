@@ -1,0 +1,36 @@
+@import '../../foundation';
+
+
+.colorpicker{
+    //border: 1px solid red;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.colorpicker-box{
+    //border: 1px solid blue;
+    //width: 50%;
+    //flex: 1;
+    margin: 20px;
+    
+}
+
+.color-circle {
+    width: 75px;
+    height: 75px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    border: 1px solid $light-gray;
+}
+
+.iro{
+    min-width: 300px;
+}
+
+.selected{
+    min-width: 150px;
+}
