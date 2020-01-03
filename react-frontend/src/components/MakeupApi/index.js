@@ -26,7 +26,7 @@ class MakeupApi extends React.Component{
         const {makeup, color, data} = this.state;
         return (
             <div>
-                {data ? <MakeupAnalysis makeup = {makeup} color = {color} data = {data}/> : null}
+                {data ? <MakeupAnalysis query = {data}/> : null}
             </div>
         );
     }
