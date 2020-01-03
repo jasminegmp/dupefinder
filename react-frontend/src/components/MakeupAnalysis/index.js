@@ -44,17 +44,3 @@ class MakeupAnalysis extends React.Component{
 
 export default MakeupAnalysis;
 
-
-/*{this.props.data.map((item, index) => (
-                    <div key={index}>
-                    <h1>{item.name}</h1>
-                    {item.product_colors.map((c, i) => (
-                        <div key={i}>
-                        <h3>{c.colour_name}</h3>
-                        <h3>{c.hex_value}</h3>
-                        <img src = {c.image_link}/>
-                        <hr />
-                        </div>
-                    ))}
-                    </div>
-                ))}*/

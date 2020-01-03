@@ -25,6 +25,7 @@ class App extends React.Component{
       return (
         <Router>
           <Switch>
+            <div>My token = {window.token}</div>
               <Route exact path='/' component={Landing}/>
           </Switch>
         </Router>
