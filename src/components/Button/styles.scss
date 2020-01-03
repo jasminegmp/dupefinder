@@ -3,20 +3,13 @@
 button{
     width: 8rem;
     text-align:center;
-    font-size: 1rem;
+    font-size: 1.5rem;
     padding: .75rem;
     background: $light-blue;
     border: none;
     border-radius: 10px;
 
 }
-
-button a{
-    color: $dark-blue;
-    text-decoration: none;
-    font-size: 1.5rem;
-}
-
 button:hover{
     cursor: pointer;
     background: $white;

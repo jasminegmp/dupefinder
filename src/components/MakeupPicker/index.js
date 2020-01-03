@@ -9,9 +9,13 @@ class MakeupPicker extends React.Component{
         };
     }
 
+    componentDidMount(){
+        this.props.updateMakeup(this.state.makeup);
+    }
+
     handleRadio = (event) => {
         //event.preventDefault();
-        this.setState({makeup: event.target.value});  
+        this.setState({makeup: event.target.value}, () => {this.props.updateMakeup(this.state.makeup)});
       }
       
 
