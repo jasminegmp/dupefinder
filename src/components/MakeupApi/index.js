@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles.scss';
 import axios from 'axios';
+import MakeupAnalysis from '../MakeupAnalysis'
 
 class MakeupApi extends React.Component{
     constructor(props) {
@@ -18,13 +19,15 @@ class MakeupApi extends React.Component{
         .then(res => {
           const data = res.data;
           this.setState({ data });
-        }) 
-	}
-      
+        })
+    }
 
     render() {
+        const {makeup, color, data} = this.state;
         return (
-            <div>{this.props.makeup}</div>
+            <div>
+                {data ? <MakeupAnalysis makeup = {makeup} color = {color} data = {data}/> : null}
+            </div>
         );
     }
 }
