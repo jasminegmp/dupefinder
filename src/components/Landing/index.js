@@ -26,6 +26,7 @@ class Landing extends React.Component{
     updateMakeup = (makeup) => {
         //console.log(makeup);
         this.setState({makeup});
+        this.setState({submit:false});
     }
 
     render(){
