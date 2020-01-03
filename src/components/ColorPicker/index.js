@@ -13,7 +13,8 @@ class ColorPicker extends React.Component{
     onColorChange = color => {
         this.setState({
             color: color.hexString
-        });
+        }, () => {this.props.updateColor(color.hexString)});
+
     };
 
     render() {

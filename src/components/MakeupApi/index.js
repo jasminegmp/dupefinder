@@ -6,12 +6,15 @@ class MakeupApi extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            data: []
+            data: [],
+            color: this.props.color,
+            makeup: this.props.makeup,
         };
     }
 
 	async componentDidMount(){
-        axios.get(`http://makeup-api.herokuapp.com/api/v1/products.json?product_type=${this.props.makeup}`)
+        const {makeup} = this.state;
+        axios.get(`http://makeup-api.herokuapp.com/api/v1/products.json?product_type=${makeup}`)
         .then(res => {
           const data = res.data;
           this.setState({ data });

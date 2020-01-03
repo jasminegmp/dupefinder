@@ -14,13 +14,20 @@ class Landing extends React.Component{
       
       this.state = {
           submit: false,
-          makeup: null
+          makeup: null,
+          color: null
       };
     }
 
     handleSubmit = async (event) =>{
         event.preventDefault();
         this.setState({submit:true});
+    }
+
+    updateColor = (color) => {
+        //console.log(makeup);
+        this.setState({color});
+        this.setState({submit:false});
     }
 
     updateMakeup = (makeup) => {
@@ -30,16 +37,16 @@ class Landing extends React.Component{
     }
 
     render(){
-        const {submit, makeup} = this.state;
+        const {submit, makeup, color} = this.state;
         return(
             <div class = "container">
                 <div class = "box"> <Header/></div>
                 <h1>Select Color</h1>
-                <div class = "box"><ColorPicker/></div>
+                <div class = "box"><ColorPicker updateColor={this.updateColor}/></div>
                 <h1>Select Category</h1>
                 <div class = "box"><MakeupPicker updateMakeup={this.updateMakeup}/></div>
                 <div class = "box center"><button onClick = {this.handleSubmit}>Search</button></div>
-                {submit ? <MakeupApi makeup = {makeup}/> : null}
+                {submit ? <MakeupApi makeup = {makeup} color = {color}/> : null}
                 <div class = "box"><Footer/></div>
             </div>
         )
