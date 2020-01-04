@@ -38,6 +38,7 @@ class Landing extends React.Component{
 
     render(){
         const {submit, makeup, color} = this.state;
+        const query = [makeup, color];
         return(
             <div class = "container">
                 <div>My djfkdjf = {window.token}</div>
@@ -47,7 +48,7 @@ class Landing extends React.Component{
                 <h1>Select Category</h1>
                 <div class = "box"><MakeupPicker updateMakeup={this.updateMakeup}/></div>
                 <div class = "box center"><button onClick = {this.handleSubmit}>Search</button></div>
-                {submit ? <MakeupApi makeup = {makeup} color = {color}/> : null}
+                {submit ? <MakeupApi query = {query} /> : null}
                 <div class = "box"><Footer/></div>
             </div>
         )

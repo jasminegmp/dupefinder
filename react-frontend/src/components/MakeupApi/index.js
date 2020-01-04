@@ -3,34 +3,26 @@ import './styles.scss';
 import axios from 'axios';
 import MakeupAnalysis from '../MakeupAnalysis'
 
-class MakeupApi extends React.Component{
-    constructor(props) {
-        super(props);
-        this.state = {
-            data: [],
-            color: this.props.color,
-            makeup: this.props.makeup,
-        };
+function MakeupApi(query){
+
+    var myParams = {
+        data: query
     }
 
-	async componentDidMount(){
-        const {makeup} = this.state;
-        axios.get(`http://makeup-api.herokuapp.com/api/v1/products.json?product_type=${makeup}`)
-        .then(res => {
-          const data = res.data;
-          this.setState({ data });
+    if (query != "") {
+        axios.post('http://127.0.0.1:5000/api/query', myParams)
+            .then(function(response){
+                console.log(response);
+       //Perform action based on response
         })
+        .catch(function(error){
+            console.log(error);
+       //Perform action based on error
+        });
+    } else {
+        alert("The search query cannot be empty")
     }
-
-    render() {
-        const {makeup, color, data} = this.state;
-        return (
-            <div>
-                {data ? <MakeupAnalysis query = {data}/> : null}
-            </div>
-        );
-    }
+    return (<div>test</div>)
 }
-
 
 export default MakeupApi;
