@@ -7,12 +7,13 @@ const Header = () => {
         <div class = "header-container">
             <a className = "highlight-link" href = "_blank">
                 <span class = "header">
-                    <span class = "dupe">Dupe</span>
+                    <span class = "color">Color</span>
+                    <span class = "color">Dupe</span>
                     <span class = "finder">Finder</span>
                 </span>
             </a>
             <div class = "sub-header">
-                Find your ideal makeup
+                Find that shade you've always been looking for
             </div>
         </div>
     )
