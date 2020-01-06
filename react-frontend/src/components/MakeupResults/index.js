@@ -13,7 +13,7 @@ class MakeupResults extends React.Component{
     // makeup[21] should have similarity rating
 
     renderItem = (makeup, index) =>{
-            if (makeup[21] >= 1){
+            if (makeup[21] >= 0.5){
                 return(
                     <div class = "makeup-box">
                     <h1>Brand: {makeup[3]}</h1>

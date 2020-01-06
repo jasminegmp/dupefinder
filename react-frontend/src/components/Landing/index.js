@@ -42,7 +42,7 @@ class Landing extends React.Component{
         const query = [makeup, color];
         return(
             <div class = "container">
-                <div>My djfkdjf = {window.token}</div>
+                <div>{window.token}</div>
                 <div class = "box"> <Header/></div>
                 <h1>Select Color</h1>
                 <div class = "box"><ColorPicker updateColor={this.updateColor}/></div>
