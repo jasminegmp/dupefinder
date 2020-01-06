@@ -49,8 +49,12 @@ def get_query_from_react():
     df['distances'] = distances
     df =df.sort_values(by=['distances'])
     df.to_csv(r'dataframe_df.csv', index=False, encoding='utf-8')
-
-    return data
+    #df2 = df.values.T.to_dict()
+    #data = df2
+    #print df2
+    # df2 = ast.literal_eval(df.to_json(orient='values'))
+    df2 =  df.to_json(orient='split')
+    return df2
 
 
 app.run(debug=True)

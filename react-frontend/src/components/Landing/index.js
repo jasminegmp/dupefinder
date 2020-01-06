@@ -15,7 +15,8 @@ class Landing extends React.Component{
       this.state = {
           submit: false,
           makeup: null,
-          color: null
+          color: null,
+          response: null
       };
     }
 
@@ -36,6 +37,12 @@ class Landing extends React.Component{
         this.setState({submit:false});
     }
 
+    getData = (response) =>{
+        // do not forget to bind getData in constructor
+        console.log(response);
+        this.setState({response})
+    }
+
     render(){
         const {submit, makeup, color} = this.state;
         const query = [makeup, color];
@@ -48,7 +55,7 @@ class Landing extends React.Component{
                 <h1>Select Category</h1>
                 <div class = "box"><MakeupPicker updateMakeup={this.updateMakeup}/></div>
                 <div class = "box center"><button onClick = {this.handleSubmit}>Search</button></div>
-                {submit ? <MakeupApi query = {query} /> : null}
+                {submit ? <MakeupApi query = {[makeup, color]}/> : null}
                 <div class = "box"><Footer/></div>
             </div>
         )

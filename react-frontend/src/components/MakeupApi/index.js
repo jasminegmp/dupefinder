@@ -1,7 +1,6 @@
 import React from 'react';
 import './styles.scss';
 import axios from 'axios';
-import MakeupAnalysis from '../MakeupAnalysis'
 
 function MakeupApi(query){
 
@@ -13,6 +12,7 @@ function MakeupApi(query){
         axios.post('http://127.0.0.1:5000/api/query', myParams)
             .then(function(response){
                 console.log(response);
+                //this.props.response(response);
        //Perform action based on response
         })
         .catch(function(error){
