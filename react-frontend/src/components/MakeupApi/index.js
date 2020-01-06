@@ -42,9 +42,13 @@ class MakeupApi extends React.Component{
         if(this.state.loading) {
             return 'Loading...'
         } 
-        return (<div>
-            <MakeupResults response = {this.state.result}/>
-            </div>)
+        return (
+            <div>
+                <h1>Closest Matches</h1>
+                <h6>Showing only results of similarity score 1 or greater</h6>
+                <MakeupResults response = {this.state.result}/>
+            </div>
+        )
     }
     
 }

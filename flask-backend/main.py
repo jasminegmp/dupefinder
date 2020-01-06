@@ -35,6 +35,7 @@ def get_query_from_react():
     df = df.reset_index(level=1, drop=True).join(mydf).reset_index(drop=True)
 
     distances = []
+    similarity = []
     for hex_color in df['hex_value']:
         #print hex_color
         hex_color = hex_color.lstrip('#')
@@ -47,9 +48,21 @@ def get_query_from_react():
         color_diff = sqrt(abs(r - cr)**2 + abs(g - cg)**2 + abs(b - cb)**2)
         
         distances.append(color_diff)
+
+        # simiarlity score
+        # https://stats.stackexchange.com/questions/158279/how-i-can-convert-distance-euclidean-to-similarity-score
+        similar = (1/(1+color_diff))*100
+        similarity.append(similar)
+
+        #print similar
     df['distances'] = distances
-    df =df.sort_values(by=['distances'])
-    df.to_csv(r'dataframe_df.csv', index=False, encoding='utf-8')
+  
+
+    df['similarity'] = similarity
+    
+    df =df.sort_values(by=['similarity'], ascending=False)
+
+    #df.to_csv(r'dataframe_df.csv', index=False, encoding='utf-8')
     #df2 = df.values.T.to_dict()
     #data = df2
     #print df2
