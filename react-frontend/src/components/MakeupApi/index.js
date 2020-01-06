@@ -2,6 +2,7 @@ import React from 'react';
 import './styles.scss';
 import axios from 'axios';
 import MakeupResults from '../MakeupResults';
+import Loader from '../Loader';
 
 class MakeupApi extends React.Component{
 
@@ -40,12 +41,12 @@ class MakeupApi extends React.Component{
 
     render(){
         if(this.state.loading) {
-            return 'Loading...'
+            return <Loader/>;
         } 
         return (
-            <div>
+            <div class = "results">
                 <h1>Closest Matches</h1>
-                <h6>Showing only results of similarity score 0.5 or greater</h6>
+                <h3>Showing only results of similarity score 0.5 or greater</h3>
                 <MakeupResults response = {this.state.result}/>
             </div>
         )

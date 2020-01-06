@@ -16,17 +16,25 @@ class MakeupResults extends React.Component{
             if (makeup[21] >= 0.5){
                 return(
                     <div class = "makeup-box">
-                    <h1>Brand: {makeup[3]}</h1>
-                    <h2>Name: {makeup[10]}</h2>
-                    <img src = {makeup[2]} alt = {index}/>
-                    <div class="color-circle" style={{ background: `${makeup[1]}`}}></div>
-                    <h2>Color Name: {makeup[0]}</h2>
-                    {makeup[17] === null ? null:
-                        makeup[17].map((tag, i)=>(
-                            <h6>{tag}</h6>
-                        ))
-                    }
-                    <h6>Similarity Score: {makeup[21]}</h6>
+                        <h1>{makeup[3]}</h1>
+                        <h2>{makeup[10]}</h2>
+                        <div class = "makeup-box-row">
+                            <div class = "makeup-box-column">
+                                <img src = {makeup[2]} alt = {index}/>
+                            </div>
+                            <div class = "makeup-box-column">
+                                <div class="color-circle" style={{ background: `${makeup[1]}`}}></div>
+                            </div>
+                            <div class = "makeup-box-column">
+                                <h3><em>Color</em> {makeup[0]}</h3>
+                                <h3><em>Similarity Score</em> {makeup[21].toFixed(2)}</h3>
+                                {makeup[17] === null ? null:
+                                    makeup[17].map((tag, i)=>(
+                                        <span>{tag}</span>
+                                    ))
+                                }
+                            </div>
+                        </div>
                     </div>
                 )
             }  
