@@ -1,28 +1,52 @@
 import React from 'react';
 import './styles.scss';
 import axios from 'axios';
+import MakeupResults from '../MakeupResults';
 
-function MakeupApi(query){
+class MakeupApi extends React.Component{
 
-    var myParams = {
-        data: query
+    constructor(props) {
+        super(props);
+        
+        this.state = {
+            result: null,
+            loading: true,
+            query: this.props.query
+        };
+      }
+
+    componentDidMount(){
+        const { query} = this.state
+        var myParams = {
+            data: query
+        }
+        var self = this;
+        if (query != "") {
+            axios.post('http://127.0.0.1:5000/api/query', myParams)
+                .then(function(response){
+                    //console.log(response);
+                    self.setState({result: response});
+                    self.setState({loading: false});
+           //Perform action based on response
+            })
+            .catch(function(error){
+                console.log(error);
+           //Perform action based on error
+            });
+        } else {
+            alert("The search query cannot be empty")
+        }
     }
 
-    if (query != "") {
-        axios.post('http://127.0.0.1:5000/api/query', myParams)
-            .then(function(response){
-                console.log(response);
-                //this.props.response(response);
-       //Perform action based on response
-        })
-        .catch(function(error){
-            console.log(error);
-       //Perform action based on error
-        });
-    } else {
-        alert("The search query cannot be empty")
+    render(){
+        if(this.state.loading) {
+            return 'Loading...'
+        } 
+        return (<div>
+            <MakeupResults response = {this.state.result}/>
+            </div>)
     }
-    return (<div>test</div>)
+    
 }
 
 export default MakeupApi;

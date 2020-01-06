@@ -15,8 +15,7 @@ class Landing extends React.Component{
       this.state = {
           submit: false,
           makeup: null,
-          color: null,
-          response: null
+          color: null
       };
     }
 
@@ -37,11 +36,6 @@ class Landing extends React.Component{
         this.setState({submit:false});
     }
 
-    getData = (response) =>{
-        // do not forget to bind getData in constructor
-        console.log(response);
-        this.setState({response})
-    }
 
     render(){
         const {submit, makeup, color} = this.state;
@@ -62,4 +56,4 @@ class Landing extends React.Component{
     }
 }
 
-export default withRouter(Landing);
+export default Landing;

@@ -22,12 +22,18 @@ class App extends React.Component{
   render() {
     // bring this back later! %%%%%%%%%%%%%%%
      // if (this.state.loading) return <Loader/>;
-      return (
-        <Router>
+
+     /*
+     BEFORE
+     
+     <Router>
           <Switch>
               <Route exact path='/' component={Landing}/>
           </Switch>
         </Router>
+        */
+      return (
+        <Landing/>
       )
   }
 }

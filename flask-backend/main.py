@@ -16,14 +16,15 @@ def my_index():
 @app.route('/api/query', methods = ['POST'])
 def get_query_from_react():
     data = request.get_json()
-    makeup =  data.get('data', {}).get('query')[0]
-    color =  data.get('data', {}).get('query')[1]
+    #print data.get('data', {})[0]
+    makeup =  data.get('data', {})[0]
+    color =  data.get('data', {})[1]
 
     h = color.lstrip('#')
     selected_color = tuple(int(h[i:i+2], 16) for i in (0, 2, 4))
 
     r = requests.get('http://makeup-api.herokuapp.com/api/v1/products.json?product_type=' + makeup).content
-    print ('http://makeup-api.herokuapp.com/api/v1/products.json?product_type=' + makeup)
+    #print ('http://makeup-api.herokuapp.com/api/v1/products.json?product_type=' + makeup)
     
     # move json data into pandas dataframe
     mydf = pd.read_json(r)
