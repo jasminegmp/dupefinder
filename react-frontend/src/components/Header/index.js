@@ -13,7 +13,7 @@ const Header = () => {
                 </span>
             </a>
             <div class = "sub-header">
-                Find that shade you've always been looking for
+                Find that shade you have always been looking for
             </div>
         </div>
     )

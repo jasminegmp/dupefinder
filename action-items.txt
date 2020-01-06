@@ -1,15 +1,15 @@
 Open
-- Create React skeleton for four pages
-    - Results page
-    - About page
-    - Contact Page
-- Familiarize with Makeup API data JSON
-- Query selected makeup category
-- Request makeup category to Makeup API
-- On makeup category data return, sift through seeking most similar color
-- Arrange data to display onto results page
+- About page
+- Contact Page
+- Add another distance measurement using Python library
 
 Closed
 12/31 - Create mockup on Gravit designer and Home Page
 1/1 - Select color
 1/2 - Select Cateogry
+- Results page
+- Familiarize with Makeup API data JSON
+- Query selected makeup category
+- Request makeup category to Makeup API
+- On makeup category data return, sift through seeking most similar color
+- Arrange data to display onto results page
