@@ -25,7 +25,7 @@ class AboutBase extends React.Component{
           <div class = "text-container"> 
             <h1>About</h1>
             <h2>What is ColorDupeFinder?</h2>
-            <p>I've always wanted to find cheaper versions of colors of makeup I liked, so I developed this I made during my week off.
+            <p>I've always wanted to find cheaper versions of colors of makeup I liked, so I developed this during my week off.
               Use ColorDupeFinder to find different options of makeup for a specific color you like. 
               Maybe it's that shade of lipstick you've been searching for a cheaper option. Or even that specific shade of nail polish you've always been looking for.
             </p>
