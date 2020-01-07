@@ -47,7 +47,6 @@ class Landing extends React.Component{
 
     render(){
         const {submit, makeup, color, error} = this.state;
-        const query = [makeup, color];
         return(
             <div class = "container">
                 <div class = "box"> <Header/></div>

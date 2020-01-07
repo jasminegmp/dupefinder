@@ -22,7 +22,7 @@ class MakeupApi extends React.Component{
             data: query
         }
         var self = this;
-        if (query != "") {
+        if (query !== "") {
             axios.post('http://127.0.0.1:5000/api/query', myParams)
                 .then(function(response){
                     //console.log(response);
