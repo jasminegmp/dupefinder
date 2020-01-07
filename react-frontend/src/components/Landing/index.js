@@ -15,13 +15,20 @@ class Landing extends React.Component{
       this.state = {
           submit: false,
           makeup: null,
-          color: null
+          color: '#ffffff',
+          error: null
       };
     }
 
     handleSubmit = async (event) =>{
         event.preventDefault();
-        this.setState({submit:true});
+        if (this.state.makeup === null){
+            this.setState({error:'Error: Please select a category'});
+        }
+        else{
+            this.setState({submit:true});
+        }
+        
     }
 
     updateColor = (color) => {
@@ -34,11 +41,12 @@ class Landing extends React.Component{
         //console.log(makeup);
         this.setState({makeup});
         this.setState({submit:false});
+        this.setState({error:null});
     }
 
 
     render(){
-        const {submit, makeup, color} = this.state;
+        const {submit, makeup, color, error} = this.state;
         const query = [makeup, color];
         return(
             <div class = "container">
@@ -49,6 +57,7 @@ class Landing extends React.Component{
                 <div class = "box"><MakeupPicker updateMakeup={this.updateMakeup}/></div>
                 <div class = "box center"><button onClick = {this.handleSubmit}>Search</button></div>
                 {submit ? <MakeupApi query = {[makeup, color]}/> : null}
+                {error ? <div class = "error center">{error}</div> : null}
                 <div class = "box"><Footer/></div>
             </div>
         )

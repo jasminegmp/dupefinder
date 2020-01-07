@@ -29,7 +29,6 @@ class ColorPicker extends React.Component{
                 </div>
                 <div class = "colorpicker-box selected">
                     <div class="color-circle" style={{ background: `${this.state.color}`}}></div>
-                    <div class="color-text">Hex Value: {this.state.color}</div>
                 </div>
             </div>
         );
