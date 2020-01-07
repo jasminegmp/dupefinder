@@ -42,7 +42,6 @@ class Landing extends React.Component{
         const query = [makeup, color];
         return(
             <div class = "container">
-                <div>{window.token}</div>
                 <div class = "box"> <Header/></div>
                 <h1>Select Color</h1>
                 <div class = "box"><ColorPicker updateColor={this.updateColor}/></div>
@@ -56,4 +55,4 @@ class Landing extends React.Component{
     }
 }
 
-export default Landing;
+export default withRouter(Landing);

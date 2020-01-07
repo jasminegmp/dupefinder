@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles.scss';
-import Loader from '../Loader';
+import About from '../About';
+import Contact from '../Contact';
 import Landing from '../Landing';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
@@ -26,14 +27,16 @@ class App extends React.Component{
      /*
      BEFORE
      
-     <Router>
-          <Switch>
-              <Route exact path='/' component={Landing}/>
-          </Switch>
-        </Router>
+
         */
       return (
-        <Landing/>
+        <Router>
+          <Switch>
+              <Route exact path='/' component={Landing}/>
+              <Route exact path='/about' component={About}/>
+              <Route exact path='/contact' component={Contact}/>
+          </Switch>
+        </Router>
       )
   }
 }
